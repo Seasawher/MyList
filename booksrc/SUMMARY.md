@@ -1,5 +1,4 @@
 # Summary
 
-* [Introduction](./README.md)
-
-* [How to use](./HowToUse.md)
+* [MyListの定義](./MyList.md)
+* [Appendの結合性](./Append.md)

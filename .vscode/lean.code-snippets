@@ -1,0 +1,70 @@
+{
+  "disable autoimplicit": {
+    "scope": "lean,lean4",
+    "prefix": "autoimp",
+    "body": [
+      "set_option autoImplicit false",
+      "set_option relaxedAutoImplicit false",
+    ],
+    "description": "autoimplicit is evil"
+  },
+  "doc string": {
+    "scope": "lean,lean4",
+    "prefix": "doc",
+    "body": [
+      "/-- $0 -/",
+    ],
+    "description": "doc string"
+  },
+  "drop warning": {
+    "scope": "lean,lean4",
+    "prefix": "dropwarn",
+    "body": [
+      "#guard_msgs (drop warning) in --#",
+    ],
+    "description": "drop warning"
+  },
+  "unusedTactic linter disable": {
+    "scope": "lean,lean4",
+    "prefix": "unusedTactic",
+    "body": [
+      "set_option linter.unusedTactic false in --#",
+    ],
+    "description": "unusedTactic linter disable"
+  },
+  "stardoc": {
+    "scope": "lean,lean4",
+    "prefix": "stardoc",
+    "body": [
+      "/-⋆-/",
+    ],
+    "description": "convert doc to block comment"
+  },
+  "starguard": {
+    "scope": "lean,lean4",
+    "prefix": "starguard",
+    "body": [
+      "/-⋆-//-- -/",
+      "#guard_msgs in --#",
+    ],
+    "description": "#guard_msgs for convert doc to block comment"
+  },
+  "dropsorry": {
+    "scope": "lean,lean4",
+    "prefix": "dropsorry",
+    "body": [
+      "set_option warn.sorry false in --#",
+    ],
+    "description": "drop sorry warning"
+  },
+  "section": {
+    "scope": "lean,lean4",
+    "prefix": "sec",
+    "body": [
+      "section --#",
+      "$0",
+      "end --#",
+    ],
+    "description": "section"
+  }
+}
