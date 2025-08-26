@@ -103,4 +103,6 @@ open Lean
 instance : Repr (MyList α) where
   reprPrec l _ := toString l
 
-#guard reprStr ⟦1, 2, 3⟧ = "⟦1, 2, 3⟧"
+/-⋆-//-- info: ⟦1, 2, 3⟧ -/
+#guard_msgs in --#
+#eval ⟦1, 2, 3⟧
