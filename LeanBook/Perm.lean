@@ -40,3 +40,37 @@ example : ⟦1, 2, 3⟧ ≈ ⟦3, 2, 1⟧ := calc
   _ ≈ ⟦2, 1, 3⟧ := by grind
   _ ≈ ⟦2, 3, 1⟧ := by grind
   _ ≈ ⟦3, 2, 1⟧ := by grind
+
+/- ## 反射的であること -/
+
+@[refl, grind =>, simp]
+theorem myperm_refl {α : Type} (l : MyList α) : l ≈ l := by
+  -- `l`に対する帰納法で証明できる
+  induction l with grind
+
+/- ## 対称的であること -/
+
+theorem myperm_symm {α : Type} {l₁ l₂ : MyList α} (h : l₁ ≈ l₂) : l₂ ≈ l₁ := by
+  -- `h`に対する帰納法で証明できる
+  induction h with grind
+
+/- ## append と置換の関係 -/
+
+variable {α : Type}
+
+@[grind _=_, defeq, simp]
+theorem append_cons (a : α) (l₁ l₂ : MyList α) : (a :: l₁) ++ l₂ = a :: (l₁ ++ l₂) := by
+  rfl
+
+theorem myperm_append {α : Type} {l₁ l₂ l₃ : MyList α}
+  (h : l₁ ≈ l₂) : l₁ ++ l₃ ≈ l₂ ++ l₃ := by
+  induction h with
+  | nil => simp
+  | @cons a xs ys hxy ih =>
+    dsimp
+    apply MyPerm.cons
+    exact ih
+  | swap x y l =>
+    dsimp
+    apply MyPerm.swap
+  | trans => sorry
