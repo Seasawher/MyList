@@ -64,8 +64,6 @@ theorem append_cons (a : α) (l₁ l₂ : MyList α) : (a :: l₁) ++ l₂ = a :
 
 theorem myperm_append {α : Type} {l₁ l₂ l₃ : MyList α}
   (h : l₁ ≈ l₂) : l₁ ++ l₃ ≈ l₂ ++ l₃ := by
-  induction h with
-  | nil => simp
-  | @cons a xs ys hxy ih => grind
-  | swap x y l => grind
-  | @trans l1 l2 l3 h1 h2 ih1 ih2 => grind
+  induction h with grind
+
+
