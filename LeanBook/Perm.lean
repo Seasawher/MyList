@@ -66,11 +66,6 @@ theorem myperm_append {α : Type} {l₁ l₂ l₃ : MyList α}
   (h : l₁ ≈ l₂) : l₁ ++ l₃ ≈ l₂ ++ l₃ := by
   induction h with
   | nil => simp
-  | @cons a xs ys hxy ih =>
-    dsimp
-    apply MyPerm.cons
-    exact ih
-  | swap x y l =>
-    dsimp
-    apply MyPerm.swap
-  | trans => sorry
+  | @cons a xs ys hxy ih => grind
+  | swap x y l => grind
+  | @trans l1 l2 l3 h1 h2 ih1 ih2 => grind
