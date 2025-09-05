@@ -1,0 +1,15 @@
+name: Test for lean-update
+on:
+  workflow_dispatch:
+
+jobs:
+  update_lean:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+      - name: Update Lean project
+        uses: leanprover-community/lean-update@develop # develop ブランチでテストする
