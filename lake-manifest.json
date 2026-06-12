@@ -1,11 +1,11 @@
-{"version": "1.1.0",
+{"version": "1.2.0",
  "packagesDir": ".lake/packages",
  "packages":
  [{"url": "https://github.com/Seasawher/mdgen",
    "type": "git",
    "subDir": null,
    "scope": "",
-   "rev": "529275f8325099464d0a8493fa699c165bdb5141",
+   "rev": "c003ac1229883b25d3b9e5df2fc0b2da453d3c8a",
    "name": "mdgen",
    "manifestFile": "lake-manifest.json",
    "inputRev": "main",
@@ -15,11 +15,12 @@
    "type": "git",
    "subDir": null,
    "scope": "",
-   "rev": "cacb481a1eaa4d7d4530a27b606c60923da21caf",
+   "rev": "baf3e62fbb3502305076ca077e004aea78157c63",
    "name": "Cli",
    "manifestFile": "lake-manifest.json",
    "inputRev": "main",
    "inherited": true,
    "configFile": "lakefile.toml"}],
  "name": "«Lean Book»",
- "lakeDir": ".lake"}
+ "lakeDir": ".lake",
+ "fixedToolchain": false}
