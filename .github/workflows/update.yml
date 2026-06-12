@@ -2,6 +2,9 @@ name: Update Lean
 on:
   # schedule:
   #   - cron: "0 11 * * *"
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
