@@ -18,4 +18,4 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Update Lean project
-        uses: leanprover-community/lean-update@rewrite-script
+        uses: leanprover-community/lean-update@dev
